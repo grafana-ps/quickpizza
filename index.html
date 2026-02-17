@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuickPizza | Fast, Fresh, & Delicious</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>QuickPizza | Artisanal Delivery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <style>
-        /* CSS Variables for easy branding */
         :root {
-            --primary-red: #d32f2f;
-            --secondary-orange: #ff9800;
-            --dark-charcoal: #333;
-            --light-bg: #fff9f0;
+            --midnight-blue: #0a0f1d;
+            --estate-gold: #b39359;
+            --merlot: #630d0d;
+            --linen: #fdfaf5;
             --white: #ffffff;
         }
 
@@ -23,10 +21,10 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--linen);
+            color: var(--midnight-blue);
             line-height: 1.6;
-            background-color: var(--light-bg);
-            color: var(--dark-charcoal);
         }
 
         /* Navigation */
@@ -36,16 +34,18 @@
             align-items: center;
             padding: 1.5rem 10%;
             background: var(--white);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary-red);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--midnight-blue);
+            letter-spacing: 1px;
         }
 
         .nav-links {
@@ -53,174 +53,170 @@
             list-style: none;
         }
 
-        .nav-links li {
-            margin-left: 2rem;
-        }
-
+        .nav-links li { margin-left: 2.5rem; }
         .nav-links a {
             text-decoration: none;
-            color: var(--dark-charcoal);
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-red);
+            color: var(--midnight-blue);
+            font-weight: 400;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
         }
 
         /* Hero Section */
         .hero {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 5rem 10%;
-            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
+            justify-content: center;
+            text-align: center;
+            padding: 12rem 10%;
+            background: linear-gradient(rgba(10, 15, 29, 0.6), rgba(10, 15, 29, 0.6)), 
                         url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
             background-position: center;
-            min-height: 80vh;
+            color: var(--white);
         }
 
-        .hero-content {
-            max-width: 500px;
-        }
+        .hero-content { max-width: 800px; }
 
-        .hero h1 {
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
-            line-height: 1.1;
             margin-bottom: 1.5rem;
-            color: var(--primary-red);
+            font-style: italic;
+            font-weight: 600;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            opacity: 0.9;
         }
 
         .cta-button {
             display: inline-block;
-            background-color: var(--primary-red);
+            background-color: transparent;
             color: var(--white);
-            padding: 1rem 2.5rem;
+            padding: 1rem 3rem;
             text-decoration: none;
-            border-radius: 50px;
             font-weight: 600;
-            font-size: 1.1rem;
-            transition: transform 0.3s, background 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            transition: 0.4s;
+            border: 1px solid var(--white);
+            font-size: 0.8rem;
         }
 
         .cta-button:hover {
-            background-color: #b71c1c;
-            transform: scale(1.05);
+            background-color: var(--white);
+            color: var(--midnight-blue);
         }
 
         /* Features Section */
         .features {
-            padding: 5rem 10%;
-            text-align: center;
-            background-color: var(--white);
-        }
-
-        .section-title {
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
+            padding: 8rem 10%;
+            background: var(--white);
         }
 
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 5rem;
         }
 
-        .feature-card {
-            padding: 2rem;
-            border-radius: 15px;
-            background: var(--light-bg);
-            transition: translateY 0.3s;
+        .card { text-align: left; }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            color: var(--estate-gold);
+            font-style: italic;
         }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .feature-card h3 {
-            color: var(--secondary-orange);
-            margin: 1rem 0;
+        .card p {
+            font-size: 0.95rem;
+            color: #555;
+            font-weight: 300;
         }
 
         /* Footer */
         footer {
-            background: var(--dark-charcoal);
+            background: var(--midnight-blue);
             color: var(--white);
-            padding: 3rem 10%;
+            padding: 6rem 10%;
             text-align: center;
         }
 
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--secondary-orange);
-            margin-bottom: 1rem;
+        .footer-quote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--estate-gold);
+            margin-bottom: 2.5rem;
+            opacity: 0.8;
         }
 
-        /* Responsive Design */
+        .footer-info {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            opacity: 0.5;
+            line-height: 2;
+        }
+
         @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 3rem 5%;
-            }
-            .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; } /* Simplified for example */
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
     <nav>
         <div class="logo">QuickPizza</div>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#delivery">Track Delivery</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">The Collection</a></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Concierge</a></li>
         </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="hero-content">
-            <h1>Hot & Fresh in 20 Minutes.</h1>
-            <p>From our brick oven to your doorstep. Experience the fastest pizza delivery service in the city with premium ingredients and zero delivery fees.</p>
-            <a href="#" class="cta-button">Order Now</a>
+            <h1>Our reputation precedes us.</h1>
+            <p>A masterclass in flavor, delivered with impeccable style. Experience an enchanted evening of artisanal dining, curated for your most discerning cravings.</p>
+            <a href="#" class="cta-button">Begin Order</a>
         </div>
     </section>
 
-    <!-- Features Section -->
     <section class="features">
-        <h2 class="section-title">Why QuickPizza?</h2>
         <div class="feature-grid">
-            <div class="feature-card">
-                <h3>⚡ Lightning Fast</h3>
-                <p>We guarantee delivery within 20 minutes or your next pizza is on us.</p>
+            <div class="card">
+                <h3>Driven by Precision</h3>
+                <p>We navigate the city with a <b>fearless</b> commitment to punctuality. Our couriers move with a speed reminiscent of a Maserati, ensuring your order arrives within 20 minutes. <b>Long story short</b>, we never keep you waiting.</p>
             </div>
-            <div class="feature-card">
-                <h3>🌿 Fresh Ingredients</h3>
-                <p>Hand-picked organic toppings and our signature 24-hour fermented sourdough crust.</p>
+            <div class="card">
+                <h3>Timeless Craftsmanship</h3>
+                <p>Our 24-hour fermented sourdough crust is a <b>work of art</b> that never goes out of style. Prepared by culinary <b>masterminds</b>, each slice is designed to meet your wildest dreams of the perfect meal.</p>
             </div>
-            <div class="feature-card">
-                <h3>📍 Real-time Tracking</h3>
-                <p>Watch your pizza's journey from the oven to your door with our live GPS tracker.</p>
+            <div class="card">
+                <h3>The Midnight Service</h3>
+                <p>When you are looking for a reliable partner for your late-night reflections, we are at your service. Whether it is a quiet evening or <b>midnight rain</b>, our kitchen remains open until 2 AM to satisfy your hunger.</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <div class="footer-logo">QuickPizza</div>
-        <p>&copy; 2026 QuickPizza Delivery Inc. All rights reserved.</p>
-        <p style="margin-top: 10px; font-size: 0.8rem; color: #999;">123 Pizza Lane, Foodville, NY</p>
+        <div class="footer-quote">
+            "All’s well that ends well with a perfect crust."
+        </div>
+        <div class="footer-info">
+            &copy; 2026 QuickPizza Artisanal Delivery <br> 
+            Established on Cornelia Street • Everything has changed, except our quality.
+        </div>
     </footer>
 
 </body>
